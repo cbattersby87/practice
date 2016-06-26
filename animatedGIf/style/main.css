@@ -1,0 +1,43 @@
+/* CSS Document */
+body {
+  background: #f2f2f2; }
+
+.library {
+  display: none; }
+
+.wrapper .header {
+  background-color: #e2e2e2;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold; }
+.wrapper .content {
+  background: #fff;
+  padding: 2px 0; }
+  .wrapper .content .bodyHeader {
+    font-variant: small-caps; }
+  .wrapper .content .bullets div:hover {
+    background-color: #ccc; }
+  .wrapper .content .bullets .hidden {
+    display: none !important; }
+  .wrapper .content .bullets .play {
+    background: #ccc;
+    width: 500px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap; }
+    .wrapper .content .bullets .play .play-img {
+      padding-left: 125px; }
+    .wrapper .content .bullets .play .gifFont {
+      font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+      text-align: center;
+      font-weight: bold; }
+.wrapper p {
+  padding: 0 2px;
+  font-family: Gotham,"Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px; }
+.wrapper p:hover {
+  background-color: #ccc; }
+
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,193 @@
+
+
+$blue: #428bca;
+$blue-dark: darken($blue, 5%);
+$space: 40px;
+$gray-light: #aaa;
+$gray-lighter: #eee;
+$dark-gray: #3f3f3f;
+$light-blue: #46abd1;
+$dark-black: #2c2c2c;
+
+//Flex
+
+
+@mixin flexDirection($direction)       {flex-direction:$direction;-webkit-flex-direction:$direction;-moz-flex-direction:$direction;}
+@mixin flexSize($size)                 {flex: $size;-webkit-flex: $size;-moz-flex: $size;}
+@mixin flexOrder($order)               {order: $order;-webkit-order: $order;-moz-order: $order;}
+@mixin justifyContent($justify)        {justify-content:$justify;}
+@mixin vAlign                          {position: relative;top: 50%;-webkit-transform: translate(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);}
+@mixin transition($effect)             { transition: ($effect); -webkit-transition: ($effect); -moz-transition: ($effect); -o-transition: ($effect);  }
+@mixin translate3d($effect...)         {-webkit-transform: translate3d($effect);-moz-transform: translate3d($effect);-o-transform: translate3d($effect);-ms-transform: translate3d($effect);transform: translate3d($effect);}
+@mixin flex-display                    { display: -webkit-box; display: -moz-box; display: -ms-flexbox;  display: -webkit-flex; display: flex; }
+
+//other Mixins
+@mixin marginBottom($size)             {margin-bottom: $size;}
+@mixin marginTop($size)                {margin-top: $size;}
+@mixin marginLeft($size)               {margin-left: $size;}
+@mixin font($type...)                  {font-family:$type;}
+
+
+
+
+
+
+
+/* DEFAULTS */
+
+.btn                                   {background: $blue;border: $blue-dark solid 1px;border-radius: 3px;color: #fff;display: inline-block;font-size: 14px;padding: 8px 15px;text-decoration: none;text-align: center;min-width: 60px;position: relative;font-family: arial;opacity: 1;@include transition(opacity .25s ease-in-out);
+  &:hover                              {background: $blue-dark;opacity: 0.5;}
+  &.btn-big                            {font-size: 18px;padding: 15px 20px;min-width: 100px;}
+}
+
+
+.overlay                               {position:absolute;display:none; background-color: rgba(0, 0, 0, 0.7);top: 0;left: 0;bottom: 0;right: 0;}   
+
+
+
+/*Splash Screen 1 */
+
+.splashScreen1                         {  display:none; opacity: 0;  position: fixed; z-index: 300; top: 10%; left: 0; bottom:0; right:0; @include transition(all 0.15s linear); background-color: white; width: 300px; height:200px; margin: 0 auto;
+  .outer                               { @include flex-display; height: 100%; 
+    .inner                             {   box-shadow: 1px 1px 2px #333; }
+                                       }
+                                       }
+
+.splashScreen1 .slide .active          {@include translate3d(230px,0,0);}
+.splashScreen1.open                    { display:block;}
+.splashScreen1.open                    { opacity: 0;}
+.splashScreen1.fadein                  { opacity: 1;}
+.splashScreen1-right .splashScreen1    {position: fixed; top: 10%; left: 0; bottom:0; right:-600px; margin: 0 auto;@include transition(right 0.5s ease);}
+
+
+
+
+/*Splash Screen 2 */
+
+
+.splashScreen2                         {position: fixed;z-index:300;top:10%;left:-400px;bottom:0;right:0;width: 300px;height: 224px;@include transition(all 0.3s linear)}  
+
+.splashScreen2-open .splashScreen2     {position: fixed; top: 10%; left: 0; bottom:0; right:0; margin: 0 auto;}
+.splashScreen2 .active                 {@include translate3d(600px,0,0);}
+
+.splashScreen2-right .splashScreen2    {position: fixed; top: 10%; @include translate3d(600px, 0, 0);}
+
+
+/*
+.splashScreen2                         {@include transition(left 0.5s ease);}
+.splashScreen2-right .splashScreen2    {position: fixed; top: 10%; left: 0; bottom:0; right:-600px; margin: 0 auto;@include transition(right 0.5s ease);}
+*/
+.splashScreen2Wrap.close               { opacity:0;}
+.splashScreen2Wrap.open                { visibility: visible;}
+
+
+
+/*Splash Screen 3 */
+
+.splashScreen3                         {position: fixed; z-index: 400; top: 10%; right:-400px; width: 300px;height: 300px;}
+
+.splashScreen3.close                   {display: none;}
+.splashScreen3.fadein                  { opacity: 1;@include transition(opacity .15s ease-in-out); }
+
+
+.splashScreen3-open .splashScreen3     {position: fixed; top: 10%; left: 0; bottom:0; right:0; margin: 0 auto;}
+.splashScreen3 .active                 {@include translate3d(-600px,0,0);}
+//.splashScreen3                         {@include transition(right 0.5s ease);}
+
+
+
+/* MODAL */
+
+.modal-dialog                          {background: #fefefe;border: gray solid 1px;z-index: 11; width: 300px;@include font("ubuntu", sans-serif);}
+
+.modal-body                            {padding: $space/2;}
+
+.modal-header,.modal-footer            {padding: $space/4 $space/2;}
+
+.modal-header                          {border-bottom: $gray-lighter solid 1px;
+  h2                                   {font-size: 20px;}
+                                       }
+
+.modal-footer                          {border-top: $gray-lighter solid 1px;text-align: right;}
+
+.modal-body                            {
+    h3                                 {@include marginTop(-5px);} 
+    .column                            {@include marginBottom(15px);
+      .formText                        {@include flex-display;@include flexDirection(row); @include marginTop(5px); @include justifyContent(space-between);}
+    }
+
+}
+
+
+
+
+//Main page
+.registerForm                          {@include font("ubuntu", sans-serif);}
+#start                                 {@include marginLeft(20px);@include marginTop(15px);}
+
+
+svg                                    {display:block;height: 60px;width: 60px;fill: white;}
+
+
+.library                               {display:none;}
+
+/*edit to navbar*/
+.navbar                                { @include flex-display; @include flexDirection(row);@include font("ubuntu", sans-serif); margin: 0 auto; 
+  > div                                { @include flex-display; background-color: $dark-gray; width: 1140px; padding-top: 5px;padding-left: 5px;@include justifyContent(flex-start);
+    > svg                              {}
+      >p                               { color:white; }
+                                       }
+  .navText                             { padding-left: 75px; color:white; }
+                                       }
+
+.navbar > div:hover                    { background-color: $light-blue;}
+
+
+/* 3D - translate */
+.container-wrapper  {position:absolute; left:-230px; width:80px; height:80px; padding:5px;}
+
+#container3         {top:220px; background:lime;
+                    -webkit-transition:all 0.3s linear;
+                    -moz-transition:all 0.3s linear;
+                    -o-transition:all 0.3s linear;
+                    -ms-transition:all 0.3s linear;
+                    transition:all 0.3s linear;}
+
+#container3.on      {-webkit-transform: translate3d(-230px,0,0);
+                    -moz-transform: translate3d(-230px,0,0);
+                    -o-transform: translate3d(-230px,0,0);
+                    -ms-transform: translate3d(-230px,0,0);
+                    transform: translate3d(230px,0,0);}
+
+/* iphone / mobile layout */
+
+@media screen and (max-width: 786px){
+
+  svg                                  {width: 500px;}
+
+  .navbar                              {@include flex-display;@include flexDirection(column);@include font("ubuntu", sans-serif);margin: 0 auto;
+    >div                               { width: 700px; @include justifyContent(flex-start);padding-left:0px;cursor: pointer;background-color: $dark-black;
+      >p                               {position: absolute; left: 0; @include marginLeft(60px);line-height: 25px;}
+                                       }
+    .desktop                           { @include flexOrder(0);}
+    .mobile                            {@include flexOrder(1);}
+    .options                           { @include flexOrder(2);}
+    .help                              {@include flexOrder(3);}
+                                       }
+
+
+
+
+                                       }
+
+
+@media screen and (max-width: 32em) {body {font-size: 75%; }}
+
+
+
+
+
+
+
+
+

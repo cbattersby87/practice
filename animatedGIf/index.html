@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link rel="stylesheet" type="text/css" href="style/main.css" />
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<div class="library">
+      <!-- symbol definition  NEVER draw -->
+       <svg version="1.1" width="50" height="50" id="playBtn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="158 -104 928 1000" enable-background="new 158 -104 928 1000" xml:space="preserve">
+<path d="M622.5-50.5c123,0,228.2,43.7,315.5,131S1069,273,1069,396s-43.7,228.2-131,315.5s-192.5,131-315.5,131
+	s-228.2-43.7-315.5-131S176,519,176,396s43.7-228.2,131-315.5S499.5-50.5,622.5-50.5z M456,619.5l446-224l-446-223V619.5z"/>
+</svg>
+  </div>
+
+<body>
+
+<div class="wrapper">
+	<div class="header"><p>Help Topics</p></div>
+		<div class="content">
+        	<p class="bodyHeader">Rigo Overview</p>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            	<div>
+                	<div class="bullets">
+                    	<ul>
+                        	<div>
+                        	<li>
+                            	<p>Example 1 - LICEcap</p>
+                                <p><img src="images/demo.gif" width="500" height="300" hspace="8" vspace="8" align="center" border="2" /></p>
+                            </li>
+                            </div>
+                            <div>
+                            <li>
+                            	<p>Example 2 - Onclick Animated Gif</p>
+                                <img class="theimage" src="images/staticImg.gif" width="500" height="300" hspace="8" vspace="8" align="center" border="2"/>
+
+<img class="theimage2 hidden" src="images/testing.gif" width="500" height="300" hspace="8" vspace="8" align="center" border="2"/>
+ </p>
+                            </li>
+                            </div>
+                             <li>
+                            	<p style="background:transparent;">Example 3 - Onclick Animated Gif - WITH SVG</p>
+                                <div class="play">
+              					<svg class="play-img">
+                  					<use xlink:href="#playBtn"
+                      				x="0" y="0" width="150" height="150"/>
+                					<p class="gifFont">Example 3 - Onclick Animated Gif - WITH SVG</p>
+                                    </div>
+										<img class="theimage3 hidden" src="images/testing.gif" width="500" height="300" hspace="8" vspace="8" align="center" border="2"/>	
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </div>
+</div>
+
+<script type="text/javascript">
+$(".theimage").click(function() {
+	$(this).addClass('hidden');
+	$(this).next().removeClass('hidden');
+	});
+$(".theimage2").click(function() {
+ 	$(this).addClass('hidden');
+	$(this).prev().removeClass('hidden');
+});
+
+$(".play").click(function() {
+	$(this).addClass('hidden');
+	$(this).next().removeClass('hidden');
+	});
+$(".theimage3").click(function() {
+ 	$(this).addClass('hidden');
+	$(this).prev().removeClass('hidden');
+});
+</script>
+
+
+
+</body>
+</html>

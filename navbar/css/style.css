@@ -1,0 +1,104 @@
+/*define our variables and default properties*/
+svg {
+  display: block;
+  height: 60px;
+  width: 60px;
+  fill: white; }
+
+/* animation */
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg); } }
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg); }
+  to {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg); } }
+.library {
+  display: none; }
+  .library > svg > #options > .gear-10-icon {
+    -webkit-animation: rotating 2s linear infinite;
+    -moz-animation: rotating 2s linear infinite;
+    -ms-animation: rotating 2s linear infinite;
+    -o-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite; }
+
+/*edit to navbar*/
+body {
+  font-family: arial; }
+
+.navbar {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-flex;
+  flex-direction: column;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  margin: 0 auto; }
+  .navbar > div {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    background-color: black; }
+    .navbar > div > p {
+      color: white; }
+  .navbar .options > svg > #rotate {
+    /*@include animation(2s);*/ }
+  .navbar .navText {
+    padding-left: 75px;
+    color: white; }
+
+.navbar > div:hover svg {
+  fill: yellow; }
+
+/* iphone / mobile layout */
+@media screen and (max-width: 786px) {
+  svg {
+    width: 500px; }
+
+  .navbar {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    margin: 0 auto; }
+    .navbar > div > p {
+      display: none; }
+    .navbar .desktop {
+      order: 0;
+      -webkit-order: 0;
+      -moz-order: 0; }
+    .navbar .mobile {
+      order: 1;
+      -webkit-order: 1;
+      -moz-order: 1; }
+    .navbar .options {
+      order: 2;
+      -webkit-order: 2;
+      -moz-order: 2; }
+    .navbar .help {
+      order: 3;
+      -webkit-order: 3;
+      -moz-order: 3; } }
+
+/*# sourceMappingURL=style.css.map */

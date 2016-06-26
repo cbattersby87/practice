@@ -1,0 +1,199 @@
+
+
+$blue: #428bca;
+$blue-dark: darken($blue, 5%);
+$space: 40px;
+$gray-light: #aaa;
+$gray-lighter: #eee;
+$dark-gray: #3f3f3f;
+$light-blue: #46abd1;
+$dark-black: #2c2c2c;
+
+//Flex
+
+
+@mixin flexDirection($direction)       {flex-direction:$direction;-webkit-flex-direction:$direction;-moz-flex-direction:$direction;}
+@mixin flexSize($size)                 {flex: $size;-webkit-flex: $size;-moz-flex: $size;}
+@mixin flexOrder($order)               {order: $order;-webkit-order: $order;-moz-order: $order;}
+@mixin justifyContent($justify)        {justify-content:$justify;}
+@mixin vAlign                          {position: relative;top: 50%;-webkit-transform: translate(-50%);-ms-transform: translateY(-50%);transform: translateY(-50%);}
+@mixin transition($effect)             { transition: ($effect); -webkit-transition: ($effect); -moz-transition: ($effect); -o-transition: ($effect);  }
+@mixin translate3d($effect...)         {-webkit-transform: translate3d($effect);-moz-transform: translate3d($effect);-o-transform: translate3d($effect);-ms-transform: translate3d($effect);transform: translate3d($effect);}
+@mixin flex-display                    { display: -webkit-box; display: -moz-box; display: -ms-flexbox;  display: -webkit-flex; display: flex; }
+
+//other Mixins
+@mixin marginBottom($size)             {margin-bottom: $size;}
+@mixin marginTop($size)                {margin-top: $size;}
+@mixin marginLeft($size)               {margin-left: $size;}
+@mixin font($type...)                  {font-family:$type;}
+
+
+
+
+
+
+
+/* DEFAULTS */
+
+.btn                                   {background-color: #0ec3f7;border: medium none; color: #fff; cursor: pointer; line-height: 22px; outline: medium none; padding: 6px 10px; text-align: center; text-transform: uppercase; font-size: 1em; @include transition(all 0.25s ease 0s);
+  &:hover                              {background-color: #d1e200;}
+  &.btn-big                            {padding: 15px 20px;font-size: 18px;}
+                                       }
+/*
+.btn                                   {background: $blue;border: $blue-dark solid 1px;border-radius: 3px;color: #fff;display: inline-block;font-size: 14px;padding: 8px 15px;text-decoration: none;text-align: center;min-width: 60px;position: relative;font-family: arial;opacity: 1;@include transition(opacity .25s ease-in-out);
+  &:hover                              {background: $blue-dark;opacity: 0.5;}
+  &.btn-big                            {font-size: 18px;padding: 15px 20px;min-width: 100px;}
+}
+*/
+.btn-close                             {/*color: $gray-light;font-size: 30px;text-decoration: none;position: absolute; right: 13px; top: 7px; */float: right;color: $gray-light;font-size: 30px;text-decoration: none;@include transition(opacity .25s ease-in-out);margin-right:5px;
+  &:hover                              {color: darken($gray-light, 10%);opacity: 0.5;}
+                                       }
+
+
+.page-wrap                             {height: 100%; left: 0; display: none; position:fixed; top:0; width: 100%; background-color: rgba(0, 0, 0, 0.7);}
+
+
+/* STEP 1 */
+
+.step1                                {margin: 5% auto auto auto; max-width: 300px;padding: 1%;width: 50%;position:fixed;z-index:300;@include translate3d(-1000px, 0, 0);@include transition(all 0.15s linear);opacity: 0;/*position: fixed;z-index:200;top:10%;@include translate3d(-1000px, 0, 0);width: 300px;height: 224px;@include transition(all 0.15s linear);opacity: 0;*/}  
+.step1-open .step1                    {opacity: 1;@include translate3d(0, 0, 0);margin: 5% auto auto; position: fixed;left: 0; right: 0;/*position: fixed; top: 10%; left: 0; bottom:0; right:0; margin: 0 auto;opacity: 1;@include translate3d(0, 0, 0);*/}
+.step1.close                          { opacity:0;}
+
+
+
+
+
+/*Step 2 */
+
+.step2                                {margin: 5% auto auto; max-width: 300px;padding: 1%;width: 50%;position:fixed;z-index:200;@include translate3d(-1000px, 0, 0);@include transition(all 0.15s linear);opacity: 0;/*position: fixed;z-index:300;top:10%;@include translate3d(-1000px, 0, 0);width: 300px;height: 224px;@include transition(all 0.15s linear);opacity: 0;*/}  
+.step2-open .step2                    {opacity: 1;@include translate3d(0, 0, 0);margin: 5% auto auto; position: fixed;left: 0; right: 0;}
+.step2.close                          { opacity:0;}
+
+
+/*Step 3 */
+
+
+.step3                                {margin: 5% auto auto; max-width: 300px;padding: 1%;width: 50%;position:fixed;z-index:200;@include translate3d(-1000px, 0, 0);@include transition(all 0.15s linear);opacity: 0;/*position: fixed;z-index:300;top:10%;@include translate3d(-1000px, 0, 0);width: 300px;height: 224px;@include transition(all 0.15s linear);opacity: 0;*/}  
+.step3-open .step3                    {opacity: 1;@include translate3d(0, 0, 0);margin: 5% auto auto; position: fixed;left: 0; right: 0;/*position: fixed; top: 10%; left: 0; bottom:0; right:0; margin: 0 auto;opacity: 1;@include translate3d(0, 0, 0);*/}
+.step3.close                          { opacity:0;}
+
+
+/* REGISTER FORM */
+
+.register-outer                       {padding: 10px;
+  .register                           {position: relative;
+    .title                            {border-bottom: 1px solid #aaaaaa; text-align: center;font-size: 1em; height: 20px; line-height: 5px; padding: 0; text-transform: uppercase;margin: 0;}
+    .input                            {display:block; margin: 10px auto; font-size: 1em; height: 24px;line-height: 24px; max-width: 160px; padding: 0px 10px; width: 100%;}
+                                      }
+                                      }
+
+
+
+
+/* MODAL */
+
+.modal-dialog                          {background: #fefefe;border: gray solid 1px;z-index: 11; width: 300px;@include font("ubuntu", sans-serif);}
+
+.modal-body                            {padding: $space/2;}
+
+.modal-header,.modal-footer            {padding: $space/4 $space/2;}
+
+.modal-header                          {border-bottom: $gray-lighter solid 1px;
+  h2                                   {font-size: 20px;}
+                                       }
+
+.modal-footer                          {border-top: $gray-lighter solid 1px;@include flex-display;@include justifyContent(space-around);}
+
+.modal-body                            {
+    h3                                 {@include marginTop(-5px);} 
+    .column                            {@include marginBottom(15px);
+      .formText                        {@include flex-display;@include flexDirection(row); @include marginTop(5px); @include justifyContent(space-between);}
+    }
+
+}
+
+
+
+
+//Main page
+.registerForm                          {@include font("ubuntu", sans-serif);}
+#start                                 {@include marginLeft(20px);@include marginTop(15px);}
+
+
+svg                                    {display:block;height: 60px;width: 60px;fill: white;}
+
+
+.library                               {display:none;}
+
+/*edit to navbar*/
+/*
+header                                 {position: fixed; width: 100%;text-align: center;margin-top:-15px; margin-left:-10px;padding-right:10px; background: #1a1b19; height: 60px;@include flex-display;@include flexDirection(row);
+  .navbar                              { @include flex-display; @include flexDirection(row); @include font("ubuntu", sans-serif); margin: 0 auto; margin-top:-10px;margin-left:-10px;
+  > div                                { @include flex-display; padding-top: 5px;padding-left: 5px;padding-right: 200px;@include justifyContent(flex-start);
+    > svg                              {}
+      >p                               { color:white; }
+                                       }
+  .navText                             { padding-left: 75px; color:white; }
+                                       }
+                                  
+.navbar > div:hover                    { background-color: $light-blue;}
+
+                                       }
+*/
+
+.navbar                                {  @include flex-display; @include flexDirection(row); @include font("ubuntu", sans-serif); margin: 0 auto; margin-top:-10px;margin-left:-10px;
+  > div                                { @include flex-display; background-color: $dark-gray; padding-top: 5px;padding-left: 5px;padding-right: 200px;@include justifyContent(flex-start);width: 100%;
+    > svg                              {}
+      >p                               { color:white; }
+                                       }
+  .navText                             { padding-left: 75px; color:white; }
+                                       }
+                                  
+.navbar > div:hover                    { background-color: $light-blue;}
+                                     
+
+/* iphone / mobile layout */
+
+@media screen and (max-width: 786px){
+
+  svg                                  {width: 500px;}
+/*
+header                                 {position: fixed; width: 100%;text-align: center;margin-top:-15px; margin-left:-10px;padding-right:10px; background: #1a1b19; height: 200px;@include flex-display;@include flexDirection(column);
+  .navbar                              {@include font("ubuntu", sans-serif);margin: 0 auto; 
+    >div                               { width: 700px; @include justifyContent(flex-start);padding-left:0px;cursor: pointer;
+      >p                               {position: absolute; left: 0; @include marginLeft(60px);line-height: 25px;}
+                                       }
+    .desktop                           { @include flexOrder(0);}
+    .mobile                            {@include flexOrder(1);}
+    .options                           { @include flexOrder(2);}
+    .help                              {@include flexOrder(3);}
+                                       }
+                                       }
+
+                                       */
+                              
+  .navbar                              {@include flex-display;@include flexDirection(column);@include font("ubuntu", sans-serif);margin: 0 auto; margin-top:-10px;margin-left:-10px;
+    >div                               { width: 700px; @include justifyContent(flex-start);padding-left:0px;cursor: pointer;background-color: $dark-gray;
+      >p                               {position: absolute; left: 0; @include marginLeft(60px);line-height: 25px;}
+                                       }
+    .desktop                           { @include flexOrder(0);}
+    .mobile                            {@include flexOrder(1);}
+    .options                           { @include flexOrder(2);}
+    .help                              {@include flexOrder(3);}
+                                       }
+
+
+
+                                       }
+
+
+@media screen and (max-width: 32em) {body {font-size: 75%; }}
+
+
+
+
+
+
+
+
+

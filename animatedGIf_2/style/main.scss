@@ -1,0 +1,36 @@
+@charset "UTF-8";
+/* CSS Document */
+
+$gray: #f2f2f2;
+$darkgray: #e2e2e2;
+$hover: #ccc;
+
+
+
+body{
+	background: $gray;
+}
+
+.library                               {display:none;} 
+
+.wrapper			{ 
+	.header			{background-color: $darkgray;height: 25px;line-height: 25px;font-weight: bold;}
+	
+	.content		{background: #fff; padding: 2px 0;
+	.bodyHeader		{font-variant:small-caps;}
+	.bullets		{
+		div:hover	{background-color: $hover;}	
+		.hidden		{display:none !important;}	
+		.play		{background: #ccc; width: 189px; height: 339px; display: flex;align-items: center;justify-content: center;flex-flow: column wrap;
+		.play-img 	{padding-left: 150px;}
+		.gifFont	{font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif; text-align:center; font-weight:bold;}
+		}
+					}
+					}
+					
+	p				{padding: 0 2px;font-family: Gotham,"Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 14px;}
+	p:hover			{background-color: $hover;}
+
+	
+	}
+	

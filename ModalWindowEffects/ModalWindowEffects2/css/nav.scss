@@ -1,0 +1,169 @@
+$dark-black: #2c2c2c;
+$dark-gray: #3f3f3f;
+$light-blue: #46abd1;
+
+
+/*define our variables and default properties*/
+
+@mixin displayFlex{
+	display:flex;
+	display: -webkit-flex;
+	display: -moz-flex;
+}
+
+@mixin flexDirection($direction){
+	flex-direction:$direction;
+	-webkit-flex-direction:$direction;
+	-moz-flex-direction:$direction;
+}
+
+@mixin flexSize($size){
+	flex: $size;
+	-webkit-flex: $size;
+	-moz-flex: $size;
+}
+
+@mixin flexOrder($order){
+	order: $order;
+	-webkit-order: $order;
+	-moz-order: $order;
+}
+
+@mixin vAlign{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translate(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+@mixin justifyContent($justify){
+  justify-content:$justify;
+}
+
+
+//other Mixins
+@mixin marginBottom($size){
+  margin-bottom: $size;
+}
+
+@mixin marginTop($size){
+  margin-top: $size;
+}
+
+@mixin marginLeft($size){
+  margin-left: $size;
+}
+
+
+
+svg{display:block;
+	height: 60px;
+	width: 60px;
+	fill: white;
+	}
+
+/* animation */
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotating /* Safari and Chrome */ {
+  from {
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+  }
+}
+
+@mixin animation($speed){
+	-webkit-animation: rotating $speed linear infinite;
+	-moz-animation: rotating $speed linear infinite;
+	-ms-animation: rotating $speed linear infinite;
+	-o-animation: rotating $speed linear infinite;
+	animation: rotating $speed linear infinite;
+
+}
+
+.library						{display:none;
+	>svg 						{
+		> #options				{
+			> .gear-10-icon 	{@include animation(2s);}
+
+								}
+								}
+
+								}
+
+.md-content                      { max-width: 425px;
+    h3                            {@include marginTop(-5px);} 
+      .formText                   {@include displayFlex;@include flexDirection(row); @include marginTop(5px); @include justifyContent(space-between);}
+
+}
+
+/*edit to navbar*/
+
+body 							{ font-family: arial; }
+.navbar             { @include displayFlex; @include flexDirection(row); margin: 0 auto; 
+  > div             { @include displayFlex; background-color: $dark-gray; width: 1140px;
+    > svg           {}
+      >p          { color:white; }
+  }
+  .desktop          { @include justifyContent(center);}
+  .mobile           { @include justifyContent(center);}
+  .options          { @include justifyContent(center);}
+  .help           { @include justifyContent(center);}
+  .navText          { padding-left: 75px; color:white; }
+}
+
+.navbar > div:hover     { background-color: $light-blue;}
+
+/* iphone / mobile layout */
+
+@media screen and (max-width: 786px){
+
+  svg{
+    width: 500px;
+  }
+  .navbar{
+    @include displayFlex;
+    @include flexDirection(column);
+    margin: 0 auto;
+
+
+
+    >div{ width: 700px; 
+      >p{position: absolute; left: 0; @include marginLeft(60px);}
+    }
+    .desktop{ @include flexOrder(0);background-color: $dark-black;@include justifyContent(flex-start);padding-left:0px;}
+    .mobile{@include flexOrder(1);background-color: $dark-black;@include justifyContent(flex-start);padding-left:0px;}
+    .options{ @include flexOrder(2);background-color: $dark-black;@include justifyContent(flex-start);padding-left:0px;}
+    .help {@include flexOrder(3);background-color: $dark-black;@include justifyContent(flex-start);padding-left:0px;}
+  }
+
+
+
+}
+
+
