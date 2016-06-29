@@ -15,20 +15,20 @@
     "bootstrap": "^3.3.6",
     "font-awesome": "^4.6.3"
   },
-  "overrides": {
-    "bootstrap": {
-      "main": [
+  "overrides" : {
+    "bootstrap" : {
+      "main" : [
         "dist/js/bootstrap.js",
         "dist/css/bootstrap.min.css",
-        "less/boostrap.less"
-      ]
-    },
-    "font-awesome": {
-      "main": [
-        "less/font-awesome.less",
-        "css/font-awesome.min.css",
-        "scss/font-awesome.scss"
+        "less/bootstrap.less"
       ]
     }
+  },
+  "font-awesome" : {
+    "main" : [
+      "less/font-awesome.less",
+      "css/font-awesome.min.css",
+      "scss/font-awesome.scss"
+    ]
   }
 }
