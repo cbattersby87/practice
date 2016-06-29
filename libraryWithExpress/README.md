@@ -20,7 +20,6 @@ Using a templating Engine:
 
 ** To start the app simply open a command prompt and type either
     - npm start
-    ~ or ~
     - gulp serve
 
 ** Entire app is run through app.js on the root level 
