@@ -18,7 +18,7 @@ Using Code enforment and gulp task manager:
 Using a templating Engine:
 - Jade
 
-** To start the app simply open a command prompt and type either
+To start the app simply open a command prompt and type either
     - npm start
     - gulp serve
 
