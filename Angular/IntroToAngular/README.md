@@ -21,4 +21,4 @@
     - Can be seen from the client perspective
         - Someone who is going to use an object that exposes methods and data
     - see image below 
-    ![abstraction](public/img/functionsAsModules.png)
+    ![modules](public/img/functionsAsModules.png)
