@@ -5,3 +5,5 @@ In this directory you find an intro to
 - Directives and Views 
 - Services
 - Routing
+
+** Entire app is run through app.js on the root level by typing node app.js in a command prompt
