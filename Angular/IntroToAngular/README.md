@@ -22,3 +22,13 @@
         - Someone who is going to use an object that exposes methods and data
     - see image below 
     ![modules](public/img/functionsAsModules.png)
+
+# Functions to Avoid Global Variables (IIFE)
+- Global variables are bad since they are very overridable and can be defined by someone else and vice versa
+    - this should be avoided at all costs!!
+- In the example above (functions to build modules) the variable, worker, is a global variable because it is defined outside of our code (function) 
+- The example below shows there is a way to define all the code that we have and be able to execute without creating any global variables
+    - worker and create worker are now defined inside of a Immediately Invoked Function Expression (IIFE)
+        - This will allow us to have the function immediately invoke itself and kick off 
+    - see image below 
+    ![iife](public/img/functionsAsIife.png)
