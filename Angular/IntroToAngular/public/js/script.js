@@ -1,28 +1,21 @@
 (function () {
+    var myApp = angular.module('myApp', []);
 
-    var createWorker = function () {
-
-        var workCount = 0;
-
-        var task1 = function () {
-            workCount += 1;
-            console.log("task1 " + workCount);
+    function mainController($scope, $http){
+        var onUserComplete = function (response) {
+            $scope.user = response.data
         };
 
-        var task2 = function () {
-            workCount += 1;
-            console.log("task2 " + workCount);
+        var onError = function (reason) {
+            $scope.error = "Could not fetch the user";
         };
 
-        return {
-            job1: task1,
-            job2: task2
-        }
-    };
+        $http.get('https://api.github.com/users/cbattersby87')
+            .then(onUserComplete);
 
-    var worker = createWorker();
+        $scope.message = "Hello angular";
+    }
 
-    worker.job1();
-    worker.job2();
+    myApp.controller("mainController", mainController);
 
-}());
+})();
