@@ -25,7 +25,7 @@
 
 
         var startCountdown = function () {
-            $interval(decrementCountdown, 1000, $scope.countdown);
+                $interval(decrementCountdown, 1000, $scope.countdown);
         }
 
         $scope.search = function (username) {
