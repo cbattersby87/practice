@@ -3,11 +3,13 @@ html()
   script(src='http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js')
   script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.2/angular-route.min.js')
   script(src='js/script.js')
+  script(src='js/github.service.js')
   body
     div(ng-app='myApp', ng-controller='mainController')
       h1 {{message}}
       div {{error}}
       {{username}}
+      {{countdown}}
       form(name='searchUser' ng-submit='search(username)')
         input(type='search' requred placeholder='Username to find' ng-model='username')
         input(type='submit' value='Search')
