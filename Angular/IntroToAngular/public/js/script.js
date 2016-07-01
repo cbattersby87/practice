@@ -23,6 +23,7 @@
 
         $scope.username = 'angular';
         $scope.message = 'Git Hub Viewer';
+        $scope.repoSortOrder = '-stargazers_count';
     }
 
     myApp.controller("mainController", mainController);

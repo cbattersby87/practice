@@ -12,10 +12,14 @@ html()
         input(type='search' requred placeholder='Username to find' ng-model='username')
         input(type='submit' value='Search')
       
-      div
+      div(ng-show='user')
         h2 {{user.name}}
         img(ng-src='{{user.avatar_url}}' title='{{user.name}}')
-      
+        p <strong>Order By: </strong> 
+          select(ng-model='repoSortOrder')
+            option(value='+name') Name
+            option(value='-stargazers_count') Stars
+            option(value='+language') Language
       table
         thead
           tr
@@ -23,7 +27,7 @@ html()
             th Stars
             th Language
         tbody
-          tr(ng-repeat='repo in repos')
+          tr(ng-repeat="repo in repos | orderBy:repoSortOrder")
             td {{repo.name}} 
             td {{repo.stargazers_count | number}}
             td {{repo.language}}
