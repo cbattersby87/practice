@@ -32,3 +32,9 @@
         - This will allow us to have the function immediately invoke itself and kick off 
     - see image below 
     ![iife](public/img/functionsAsIife.png)
+
+#Techniques Used
+- Controllers
+- Directives
+- Services
+- Routing 
