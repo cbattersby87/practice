@@ -7,8 +7,25 @@ html()
     div(ng-app='myApp', ng-controller='mainController')
       h1 {{message}}
       div {{error}}
-      | Name: {{user.name}}
-      br
-      | Location: {{user.location}}
-      br 
-      img(ng-src='{{user.avatar_url}}' title='{{user.name}}')
+      {{username}}
+      form(name='searchUser' ng-submit='search(username)')
+        input(type='search' requred placeholder='Username to find' ng-model='username')
+        input(type='submit' value='Search')
+      
+      div
+        h2 {{user.name}}
+        img(ng-src='{{user.avatar_url}}' title='{{user.name}}')
+      
+      table
+        thead
+          tr
+            th Name
+            th Stars
+            th Language
+        tbody
+          tr(ng-repeat='repo in repos')
+            td {{repo.name}} 
+            td {{repo.stargazers_count | number}}
+            td {{repo.language}}
+
+      
